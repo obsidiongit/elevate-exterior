@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Elevate Exterior</title>
+    <meta name="description" content="Explore our professional services. {{SERVICES_DESCRIPTION}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Page Specific Styles */
+        .page-hero {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: var(--space-4xl) 0 var(--space-2xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/pattern.svg') center/cover;
+            /* Pattern placeholder */
+            opacity: 0.1;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .services-layout {
+            padding: var(--space-4xl) 0;
+            background: var(--white);
+        }
+
+        .service-detail-card {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            background: var(--off-white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+            border: 1px solid var(--light-gray);
+            transition: var(--transition-base);
+        }
+
+        @media (min-width: 768px) {
+            .service-detail-card {
+                grid-template-columns: 80px 1fr;
+                gap: var(--space-2xl);
+            }
+        }
+
+        .service-detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+            background: var(--white);
+        }
+
+        .service-detail-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .service-detail-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .service-detail-content h3 {
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-bottom: var(--space-md);
+        }
+
+        .service-detail-content p {
+            color: var(--dark-gray);
+            margin-bottom: var(--space-lg);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 0.95rem;
+            color: var(--mid-gray);
+        }
+
+        .service-features li svg {
+            width: 18px;
+            height: 18px;
+            color: var(--success);
+            flex-shrink: 0;
+        }
+
+        .cta-section {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: var(--space-4xl) 0;
+            text-align: center;
+            margin-top: var(--space-4xl);
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: var(--space-xl);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <!-- Top Bar -->
+    <a href="contact.html" class="top-bar-link">
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <span class="top-bar-text">10% OFF FOR FIRST TIME CUSTOMERS</span>
+            </div>
+        </div>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="Elevate Exterior Home">
+                <img src="assets/logo.png" alt="Elevate Exterior" class="nav-logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" tabindex="0">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:720-229-4355" class="nav-phone">
+                    <div class="phone-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                        </svg>
+                    </div>
+                    <span>720-229-4355</span>
+                </a>
+                <a href="contact.html" class="btn btn-nav-cta">BOOK NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-title">Our Professional Services</h1>
+            <p class="page-subtitle">We offer a comprehensive range of exterior cleaning services designed to restore
+                the beauty and value of your property. From residential homes to commercial buildings, our expert team
+                uses the latest techniques and equipment to deliver spotless results every time.</p>
+        </div>
+    </header>
+
+    <!-- Services Content -->
+    <main class="services-layout">
+        <div class="container">
+
+            <!-- Service 1 -->
+            <div class="service-detail-card">
+                <div class="service-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        <path d="M8 11l3 3 5-5"></path>
+                    </svg>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Window Cleaning</h3>
+                    <p>Crystal clear views for your home or business. We remove dirt, grime, and streaks to let the
+                        light shine in, enhancing your property's curb appeal. Our team uses professional-grade
+                        solutions that are tough on dirt but safe for your windows and frames.</p>
+                    <ul class="service-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Professional Execution</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> High Quality Materials</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Expert Team</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary">Get a Quote</a>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-detail-card">
+                <div class="service-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="3" y1="9" x2="21" y2="9"></line>
+                        <line x1="9" y1="21" x2="9" y2="9"></line>
+                    </svg>
+                </div>
+                <div class="service-detail-content">
+                    <h3>House Washing</h3>
+                    <p>Safe and effective soft washing to remove mold, mildew, and dirt from your siding. Protect your
+                        investment and instantly brighten your home. Our low-pressure method cleans thoroughly without
+                        risking damage to your exterior surfaces.</p>
+                    <ul class="service-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Custom Design</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Efficient Process</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Guaranteed Satisfaction</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-detail-card">
+                <div class="service-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Pressure Washing</h3>
+                    <p>Deep cleaning for driveways, walkways, patios, and decks. We blast away stubborn stains, oil, and
+                        buildup to restore your hardscapes. Whether it's concrete, brick, or stone, we can make it look
+                        new again.</p>
+                    <ul class="service-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Experienced Staff</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Modern Techniques</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Affordable Pricing</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-detail-card">
+                <div class="service-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                            d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+                    </svg>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Graffiti Removal</h3>
+                    <p>Quick and professional removal of unwanted graffiti. We restore your surfaces without causing
+                        damage, maintaining a clean and professional image. We respond promptly to help you reclaiming
+                        your property.</p>
+                    <ul class="service-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Reliable Service</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Timely Delivery</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Support Available</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary">Inquire Now</a>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-detail-card">
+                <div class="service-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Parking Garage Cleaning</h3>
+                    <p>Keep your parking structure clean, safe, and welcoming. We remove oil stains, gum, and debris to
+                        improve safety and aesthetics. A clean garage leaves a positive first impression on your
+                        visitors and customers.</p>
+                    <ul class="service-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Oil Stain Removal</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Debris Cleanup</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Improved Safety</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary">Request Quote</a>
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-detail-card">
+                <div class="service-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"></path>
+                    </svg>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Commercial Cleaning</h3>
+                    <p>Tailored cleaning solutions for businesses. We ensure your storefront, building exterior, and
+                        walkways look professional and inviting to customers. We offer flexible scheduling to minimize
+                        disruption to your operations.</p>
+                    <ul class="service-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Building Exteriors</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Walkways & Entries</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Scheduled Maintenance</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bottom CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to Transform Your Space?</h2>
+
+            <a href="contact.html" class="btn btn-primary btn-lg">Get Your Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo" aria-label="Elevate Exterior">
+                        <img src="assets/logo.png" alt="Elevate Exterior" class="footer-logo-img">
+                    </a>
+                    <p class="footer-desc">Professional Exterior Cleaning</p>
+                    <div class="footer-certifications">
+                        <span class="certification">✓ Licensed & Insured</span>
+                        <span class="certification">✓ 5-Star Rated</span>
+                        <span class="certification">✓ Free Estimates</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Window Cleaning</a></li>
+                        <li><a href="services.html">House Washing</a></li>
+                        <li><a href="services.html">Pressure Washing</a></li>
+                        <li><a href="services.html">Graffiti Removal</a></li>
+                        <li><a href="services.html">Parking Garage Cleaning</a></li>
+                        <li><a href="services.html">Commercial Cleaning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><a href="tel:720-229-4355">720-229-4355</a></p>
+                    <p><a href="mailto:Kuch@elevateexteriorllc.com">Kuch@elevateexteriorllc.com</a></p>
+
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elevate Exterior. All rights reserved.</p>
+                <a href="https://www.obsidion.ai/" target="_blank" class="footer-credit">Built by Obsidion</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

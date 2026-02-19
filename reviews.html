@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews | Elevate Exterior</title>
+    <meta name="description"
+        content="See what our happy customers have to say about our services. Read genuine reviews and testimonials.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reviews Page Specific Styles */
+        .reviews-hero {
+            background: var(--off-white);
+            padding: var(--space-4xl) 0;
+            text-align: center;
+        }
+
+        .featured-section {
+            padding: var(--space-4xl) 0;
+            background: var(--white);
+        }
+
+        .featured-review-large {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: var(--space-3xl);
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--light-gray);
+            position: relative;
+        }
+
+        .featured-review-large::before {
+            content: '“';
+            font-size: 8rem;
+            color: var(--primary-subtle);
+            position: absolute;
+            top: -40px;
+            left: 20px;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .featured-text-large {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: var(--space-xl);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .featured-author-large {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-md);
+        }
+
+        .featured-avatar-large {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .grid-section {
+            padding: var(--space-4xl) 0;
+            background: var(--off-white);
+        }
+
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--space-md);
+        }
+
+        .review-stars {
+            color: #FFD700;
+            letter-spacing: 2px;
+        }
+
+        .review-date {
+            font-size: 0.85rem;
+            color: var(--mid-gray);
+        }
+
+        .review-body {
+            color: var(--dark-gray);
+            margin-bottom: var(--space-lg);
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        .review-footer {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .review-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--light-gray);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .review-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-author-name {
+            font-weight: 600;
+            color: var(--charcoal);
+            font-size: 0.95rem;
+        }
+
+        .review-author-service {
+            font-size: 0.8rem;
+            color: var(--mid-gray);
+        }
+
+        .cta-banner {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: var(--space-3xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            margin: var(--space-4xl) auto;
+            max-width: 800px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-banner h2 {
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-banner p {
+            margin-bottom: var(--space-xl);
+            opacity: 0.9;
+        }
+
+        .cta-banner .btn {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .cta-banner .btn:hover {
+            background: var(--off-white);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <!-- Top Bar -->
+    <a href="contact.html" class="top-bar-link">
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <span class="top-bar-text">10% OFF FOR FIRST TIME CUSTOMERS</span>
+            </div>
+        </div>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="Elevate Exterior Home">
+                <img src="assets/logo.png" alt="Elevate Exterior" class="nav-logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" tabindex="0">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:720-229-4355" class="nav-phone">
+                    <div class="phone-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                        </svg>
+                    </div>
+                    <span>720-229-4355</span>
+                </a>
+                <a href="contact.html" class="btn btn-nav-cta">BOOK NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="reviews-hero">
+        <div class="container">
+            <span class="section-label">Testimonials</span>
+            <h1 class="page-title">Trusted by Our Happy Clients</h1>
+            <p class="page-subtitle">Don't just take our word for it. See what our customers are saying about our work.
+            </p>
+        </div>
+    </header>
+
+    <!-- Featured Review -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="featured-review-large">
+                <div class="review-stars" style="margin-bottom: 2rem;">★★★★★</div>
+                <p class="featured-text-large">"Wow!!! What can I say??? They are AMAZING!!!! I had no idea that
+                    concrete was actually gray in color!!!! I always thought it was brown or black!!!! Very efficient
+                    and nice people with Elevate Exteriors. They are very customer service orientated as well!!! If you
+                    need your exteriors power washed Elevate Exteriors is the company for you!!!!!!"</p>
+                <div class="featured-author-large">
+                    <div class="featured-avatar-large">CP</div>
+                    <div class="review-author-info" style="text-align: left;">
+                        <span class="review-author-name" style="font-size: 1.1rem;">Curtis Partch</span>
+                        <span class="review-author-service">Concrete Cleaning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Grid -->
+    <section class="grid-section">
+        <div class="container">
+            <div class="masonry-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-date">10 months ago</span>
+                    </div>
+                    <p class="review-body">"I had Elevate Exterior come out to my house clean the exterior of the house
+                        and driveway. They did an excellent job and even found several wasp nests that I didn't know
+                        were present. I would highly recommend this company."</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">JD</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Jeff Deits</span>
+                            <span class="review-author-service">House & Driveway Wash</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-date">2 years ago</span>
+                    </div>
+                    <p class="review-body">"Recently had my gutters cleaned. He did a fantastic job and was incredibly
+                        thorough! Highly recommend"</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">JO</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Jessie Oyer</span>
+                            <span class="review-author-service">Gutter Cleaning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-date">10 months ago</span>
+                    </div>
+                    <p class="review-body">"They are the best!"</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">SM</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Sereniti Mefford</span>
+                            <span class="review-author-service">Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Placeholder Review -->
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-date">10 months ago</span>
+                    </div>
+                    <p class="review-body" style="font-style: italic; color: #888;">(Rated 5 stars)</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">MC</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Melissa Caro</span>
+                            <span class="review-author-service">Customer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="cta-banner">
+                <h2>Have You Worked With Us?</h2>
+                <p>We'd love to hear about your experience. Your feedback helps us serve you better.</p>
+                <a href="#" class="btn btn-primary btn-lg">Leave a Review</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo" aria-label="Elevate Exterior">
+                        <img src="assets/logo.png" alt="Elevate Exterior" class="footer-logo-img">
+                    </a>
+                    <p class="footer-desc">Professional Exterior Cleaning</p>
+                    <div class="footer-certifications">
+                        <span class="certification">✓ Licensed & Insured</span>
+                        <span class="certification">✓ 5-Star Rated</span>
+                        <span class="certification">✓ Free Estimates</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Window Cleaning</a></li>
+                        <li><a href="services.html">House Washing</a></li>
+                        <li><a href="services.html">Pressure Washing</a></li>
+                        <li><a href="services.html">Graffiti Removal</a></li>
+                        <li><a href="services.html">Parking Garage Cleaning</a></li>
+                        <li><a href="services.html">Commercial Cleaning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><a href="tel:720-229-4355">720-229-4355</a></p>
+                    <p><a href="mailto:Kuch@elevateexteriorllc.com">Kuch@elevateexteriorllc.com</a></p>
+
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elevate Exterior. All rights reserved.</p>
+                <a href="https://www.obsidion.ai/" target="_blank" class="footer-credit">Built by Obsidion</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

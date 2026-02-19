@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Elevate Exterior</title>
+    <meta name="description"
+        content="Learn about our story, our values, and why we are the best choice for your needs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* About Page Specific Styles */
+        .page-hero {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: var(--space-4xl) 0;
+            text-align: center;
+        }
+
+        .about-section {
+            padding: var(--space-4xl) 0;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+
+        @media (min-width: 900px) {
+            .story-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-lg);
+            color: var(--charcoal);
+        }
+
+        .story-content p {
+            margin-bottom: var(--space-md);
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .story-image {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .story-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .stats-bar {
+            background: var(--primary);
+            color: var(--white);
+            padding: var(--space-3xl) 0;
+            margin: var(--space-4xl) 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-xl);
+            text-align: center;
+        }
+
+        .stat-item-large .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: var(--space-xs);
+            color: var(--white);
+        }
+
+        .stat-item-large .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .values-section {
+            padding-bottom: var(--space-4xl);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        .value-card {
+            background: var(--off-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--primary);
+            transition: var(--transition-base);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .value-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--white);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-md);
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-sm);
+            color: var(--charcoal);
+        }
+
+        .team-cta {
+            background: var(--gray-100);
+            text-align: center;
+            padding: var(--space-4xl) 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <!-- Top Bar -->
+    <a href="contact.html" class="top-bar-link">
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <span class="top-bar-text">10% OFF FOR FIRST TIME CUSTOMERS</span>
+            </div>
+        </div>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="Elevate Exterior Home">
+                <img src="assets/logo.png" alt="Elevate Exterior" class="nav-logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" tabindex="0">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:720-229-4355" class="nav-phone">
+                    <div class="phone-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                        </svg>
+                    </div>
+                    <span>720-229-4355</span>
+                </a>
+                <a href="contact.html" class="btn btn-nav-cta">BOOK NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero">
+        <div class="container">
+            <h1 class="hero-title">About Us</h1>
+            <p class="hero-desc">Meet Greg Kuch — Owner</p>
+        </div>
+    </header>
+
+    <!-- Our Story Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <span class="section-label">Our Story</span>
+                    <h2>More Than Just A Service</h2>
+                    <p>I’m Greg Kuch, proud owner of Elevate Exterior LLC. After years in the sales industry, I made the
+                        leap in 2024 to start a family-run business built on hard work, integrity, and a desire to spend
+                        more quality time with the people who matter most.</p>
+                    <p>At Elevate Exterior, we specialize in window cleaning, pressure washing, house washing, and
+                        commercial exterior cleaning—delivering high-quality results with a personal touch. When you
+                        choose us, you're not just getting a cleaner property—you’re supporting a local, family-owned
+                        business that cares. Let’s elevate your exterior—reach out today for your free quote!</p>
+                    <p>We believe in building lasting relationships with our clients through transparency, reliability,
+                        and outstanding results.</p>
+                </div>
+                <div class="story-image">
+                    <img src="assets/greg.png" alt="Greg Kuch - Owner of Elevate Exterior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item-large">
+                    <span class="stat-number">2024</span>
+                    <span class="stat-label">Established</span>
+                </div>
+                <div class="stat-item-large">
+                    <span class="stat-number">5.0</span>
+                    <span class="stat-label">Star Rating</span>
+                </div>
+                <div class="stat-item-large">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Satisfaction</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why Choose Us</span>
+
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3>Licensed & Insured</h3>
+                    <p>Fully licensed and insured for your peace of mind.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Evenings and weekends available to fit your schedule.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Quality Guaranteed</h3>
+                    <p>Satisfaction guaranteed on every job, big or small.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo" aria-label="Elevate Exterior">
+                        <img src="assets/logo.png" alt="Elevate Exterior" class="footer-logo-img">
+                    </a>
+                    <p class="footer-desc">Professional Exterior Cleaning</p>
+                    <div class="footer-certifications">
+                        <span class="certification">✓ Licensed & Insured</span>
+                        <span class="certification">✓ 5-Star Rated</span>
+                        <span class="certification">✓ Free Estimates</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Window Cleaning</a></li>
+                        <li><a href="services.html">House Washing</a></li>
+                        <li><a href="services.html">Pressure Washing</a></li>
+                        <li><a href="services.html">Graffiti Removal</a></li>
+                        <li><a href="services.html">Parking Garage Cleaning</a></li>
+                        <li><a href="services.html">Commercial Cleaning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><a href="tel:720-229-4355">720-229-4355</a></p>
+                    <p><a href="mailto:Kuch@elevateexteriorllc.com">Kuch@elevateexteriorllc.com</a></p>
+
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elevate Exterior. All rights reserved.</p>
+                <a href="https://www.obsidion.ai/" target="_blank" class="footer-credit">Built by Obsidion</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
