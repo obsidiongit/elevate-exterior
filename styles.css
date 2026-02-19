@@ -241,6 +241,10 @@ button {
     gap: var(--space-lg);
 }
 
+.mobile-only {
+    display: none;
+}
+
 .nav-link {
     font-weight: 500;
     color: var(--dark-gray);
@@ -369,6 +373,10 @@ button {
 }
 
 /* Mobile Nav Toggle */
+.mobile-nav-controls {
+    display: none;
+}
+
 .nav-toggle {
     display: none;
     width: 40px;
@@ -1624,8 +1632,67 @@ button {
         display: none;
     }
 
+    .nav-logo-img {
+        height: 50px;
+        /* Resize logo for mobile */
+    }
+
+    .mobile-only {
+        display: block;
+        width: 100%;
+        margin-top: var(--space-sm);
+    }
+
+    .nav-phone-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-sm);
+        font-weight: 700;
+        color: var(--primary);
+        padding: var(--space-md);
+        background: var(--off-white);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--space-sm);
+    }
+
+    .nav-menu .btn-nav-cta {
+        width: 100%;
+        justify-content: center;
+        margin-top: var(--space-xs);
+    }
+
     .nav-toggle {
         display: flex;
+        /* Keep this for the button itself if needed, or rely on wrapper */
+    }
+
+    .mobile-nav-controls {
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+    }
+
+    .mobile-phone-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-full);
+        background: var(--primary);
+        color: var(--white);
+        transition: var(--transition-base);
+    }
+
+    .mobile-phone-btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+    }
+
+    .mobile-phone-btn svg {
+        width: 20px;
+        height: 20px;
     }
 
     .nav-menu.active {
